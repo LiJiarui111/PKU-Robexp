@@ -47,9 +47,14 @@ class TcpClient(object):
 
 if __name__ == "__main__":
     client = TcpClient(ip="192.168.100.128", port=30003)
+    print("socket set up successfully")
     # num = 0
-    comm = b"def P2():\n    while (True):\nspeedj([0.1,0.1,0.1,0.1,0.1,0.1],0.1,2)\n    end\nend\n"
+    comm1 = b"def P2():\n    while (True):\nspeedj([0.1,0.1,0.1,0.1,0.1,0.1],0.1,2)\n    end\nend\n"
+    comm2 = b"def P2():\n    while (True):\nspeedj([-0.1,-0.1,-0.1,-0.1,-0.1,-0.1],0.1,2)\n    end\nend\n"
+    comm3 = b"def P2():\n    while (True):\nspeedj([0,0,0,0,0,0],0.1,2)\n    end\nend\n"
+
     while True:
-        client.send(comm)
+        client.send(comm3)
         time.sleep(0.5)
+        print("send completed")
         # num += 1
